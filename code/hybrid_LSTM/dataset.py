@@ -1,4 +1,4 @@
-/***************************************************************************************
+'''/***************************************************************************************
 *    Modified by: Rahat Ul Ain
 *    Original Source
 *    Title: auto-eeg-diagnosis-example
@@ -6,7 +6,7 @@
 *    Date: Oct 25, 2017
 *    Availability: https://github.com/robintibor/auto-eeg-diagnosis-example
 *
-***************************************************************************************/
+***************************************************************************************/'''
 import logging
 import re
 import numpy as np
@@ -67,7 +67,7 @@ def get_info_with_mne(file_path):
     """
     try:
         if 'eval' in file_path:
-            edf_file = mne.io.read_raw_edf(file_path, montage = None, eog = ['FP1', 'FP2', 'F3', 'F4',
+            edf_file = mne.io.read_raw_edf(file_path, eog = ['FP1', 'FP2', 'F3', 'F4',
                                                                              'C3', 'C4',  'P3', 'P4','O1', 'O2','F7', 'F8',
                                                                              'T3', 'T4', 'T5', 'T6','PZ','FZ', 'CZ','A1', 'A2'], verbose='error')
         else:
@@ -116,7 +116,7 @@ def load_data(fname, preproc_functions, sensor_types=['EEG']):
         fname)
     log.info("Load data..."+fname)
     ##edit to get on gpu
-    torch.cuda.set_device(1)
+    torch.cuda.set_device(0)
     #print("--------------------------------" + torch.cuda.get_device_name(0))
 
     cnt.load_data()

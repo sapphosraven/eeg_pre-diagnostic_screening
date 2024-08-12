@@ -1,22 +1,22 @@
-/********
+'''/********
 *Author: Rahat Ul Ain
-*********/
+*********/'''
+
 import numpy as np
 import h5py
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from keras.models import Sequential
-from keras.layers import SimpleRNN,LSTM, Dense, Activation, Bidirectional
-from keras.utils import to_categorical
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import SimpleRNN,LSTM, Dense, Activation, Bidirectional
+from tensorflow.keras.utils import to_categorical
 from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import StandardScaler
-from keras.layers import Flatten
-from keras.layers import Dropout
-from keras.models import load_model
-from keras.utils import multi_gpu_model
-from keras.callbacks import ModelCheckpoint
-from keras.callbacks import EarlyStopping
-from keras.optimizers import Adam
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.models import load_model
+from tensorflow.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.optimizers import Adam
 print('starting')
 #load mat files with features
 file_path1 = 'tr_feat.mat'
@@ -46,8 +46,8 @@ print(tr_labels.dtype)
 print('training labels have been loaded')
 
 # ----------------------Model-----------------------
-from keras.layers import Input,Dense,concatenate,Flatten,GRU,Conv1D
-from keras.models import Model
+from tensorflow.keras.layers import Input,Dense,concatenate,Flatten,GRU,Conv1D
+from tensorflow.keras.models import Model
 inputsin= Input(shape=(t,f))
 
 x=LSTM(50,activation='tanh',unroll=True)(inputsin)
@@ -64,7 +64,7 @@ print(model.summary())
 es = EarlyStopping(monitor='val_loss', min_delta=0.01, mode='min', verbose=1, patience=15)                          #patience
 mc = ModelCheckpoint('model_LSTM_acc.hdf5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)        #filepath (save model as)
 mces = ModelCheckpoint('model_LSTM_loss.hdf5', monitor='val_loss', mode='min', verbose=1, save_best_only=True)      #filepath (save model as)
-from keras.callbacks import CSVLogger
+from tensorflow.keras.callbacks import CSVLogger
 
 csv_logger = CSVLogger('LSTM.csv', append=True, separator=';')
 

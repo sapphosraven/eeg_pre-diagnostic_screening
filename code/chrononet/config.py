@@ -1,3 +1,3 @@
 # Dataset folder path 
-normaldir = "dataset/normal/train"
-abnormaldir= "dataset/abnormal/train"
+normaldir = "/home/zik/TUKL/eeg stuff/datasets/NMT/normal/train"
+abnormaldir= "/home/zik/TUKL/eeg stuff/datasets/NMT/abnormal/train"

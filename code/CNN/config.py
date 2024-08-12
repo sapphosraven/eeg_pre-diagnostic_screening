@@ -1,9 +1,11 @@
 # There should always be a 'train' and 'eval' folder directly
 # below these given folders
+import braindecode
+print(braindecode.__version__)
 # Folders should contain all normal and abnormal data files without duplications
 data_folders = [
-    'dataset/normal',
-    'dataset/abnormal']
+    '/home/zik/TUKL/eeg stuff/datasets/NMT/normal',
+    '/home/zik/TUKL/eeg stuff/datasets/NMT/abnormal']
 n_recordings = None  # set to an integer, if you want to restrict the set size
 sensor_types = ["EEG"]
 n_chans = 21

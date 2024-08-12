@@ -1,8 +1,8 @@
-/********************************************
+'''''
 * Author: Rahat Ul Ain 
 * Based on chrononet implementation by Kunal Patel
 * location: https://github.com/kunalpatel1793/Neural-Nets-Final-Project
-********************************************/
+'''''
 from pdb import set_trace
 import mne
 import pandas as pd
@@ -23,9 +23,9 @@ from tensorflow.keras.layers import Convolution2D
 from tensorflow.keras.layers import BatchNormalization
 from tensorflow.keras.layers import MaxPooling2D
 from tensorflow.keras.models import load_model
-from tensorflow.keras.utils import multi_gpu_model
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.callbacks import EarlyStopping
+
 def readDatafromPath(path):
 
 	matrix= np.empty((15000, 22), dtype='f')
@@ -33,10 +33,10 @@ def readDatafromPath(path):
 		if '.edf' in file:
 			f=os.path.join(path, file)
 			print(f)
-			edf_file = mne.io.read_raw_edf(f, montage = None, eog = ['FP1', 'FP2', 'F3', 'F4',
+			edf_file = mne.io.read_raw_edf(f, eog = ['FP1', 'FP2', 'F3', 'F4',
 			'C3', 'C4', 'P3', 'P4', 'O1', 'O2', 'F7', 'F8',
 			'T3', 'T4', 'T5', 'T6', 'PZ', 'FZ', 'CZ', 'A1', 'A2'
-			], verbose = 'error', preload = True)
+			], preload = True)
 			edf_file_down_sampled = edf_file.resample(250, npad = "auto")# set sampling frequency to 250 Hz
 			ed = edf_file_down_sampled.to_data_frame(picks = None, index = None, scaling_time = 1000.0, scalings = None,
 			copy = True, start = None, stop = None)# converting into dataframe
