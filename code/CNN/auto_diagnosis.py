@@ -1,12 +1,11 @@
-'''
+"""
 /***************************************************************************************
 *    Title: auto-eeg-diagnosis-example
 *    Author: Robin T. Schirrmeister
 *    Date: Oct 25, 2017
 *    Availability: https://github.com/robintibor/auto-eeg-diagnosis-example
 *
-***************************************************************************************/
-'''
+***************************************************************************************/"""
 import logging
 import time
 from copy import copy
@@ -377,6 +376,5 @@ if __name__ == "__main__":
     run_time = end_time - start_time
 
     log.info("Experiment runtime: {:.2f} sec".format(run_time))
-    th.save(exp.model.state_dict(), 'shallow.pt')
+    th.save(exp.model.state_dict(), 'model/shallow.pt')
    
-

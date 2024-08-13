@@ -4,8 +4,8 @@ import braindecode
 print(braindecode.__version__)
 # Folders should contain all normal and abnormal data files without duplications
 data_folders = [
-    '/home/zik/TUKL/eeg stuff/datasets/NMT/normal',
-    '/home/zik/TUKL/eeg stuff/datasets/NMT/abnormal']
+    '/home/zik/TUKL/eeg stuff/datasets/TUH/edf/normal',
+    '/home/zik/TUKL/eeg stuff/datasets/TUH/edf/abnormal']
 n_recordings = None  # set to an integer, if you want to restrict the set size
 sensor_types = ["EEG"]
 n_chans = 21
